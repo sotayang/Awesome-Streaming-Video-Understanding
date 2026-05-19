@@ -19,22 +19,28 @@ This list serves as a reference for researchers and practitioners exploring the 
 ![image](./assets/Timeline.jpg)
 
 ### <font size=5><center><b> Table of Contents </b> </center></font>
-- [🔔 Proactive Streaming Models](#-proactive-streaming-models)
-  - [Token-Driven Triggering via EOS](#token-driven-triggering-via-eos--action-token)
-  - [Dedicated Classification Heads / Detectors](#dedicated-classification-heads--detectors)
-  - [Uncertainty \& Perplexity Validation](#uncertainty--perplexity-validation)
-  - [Visual Change / Event-based Trigger](#visual-change--event-based-trigger)
-- [📺 Reactive Streaming Models](#-reactive-streaming-models)
-  - [KV Cache Management \& Eviction](#kv-cache-management--eviction)
-  - [Hierarchical Memory \& Summarization](#hierarchical-memory--summarization)
-  - [Retrieval-Augmented Mechanisms](#retrieval-augmented-mechanisms)
-  - [Computational Efficiency \& Sparse Computing](#computational-efficiency--sparse-computing)
-- [📊 Benchmarks \& Datasets](#-benchmarks--datasets)
-  - [Multi-Turn Dialogue \& QA](#multi-turn-dialogue--qa)
-  - [Real-time Captioning \& Narration](#real-time-captioning--narration)
-  - [Proactive Response \& Timing Evaluation](#proactive-response--timing-evaluation)
-- [📋 Complete Model List by Release Date](#complete-model-list-by-release-date)
-- [📋 Complete Dataset List by Release Date](#complete-dataset-list-by-release-date)
+- [Awesome-Streaming-Video-Understanding ](#awesome-streaming-video-understanding-)
+  - [**Overview**](#overview)
+    - [ Table of Contents  ](#-table-of-contents--)
+  - [🔔 Proactive Streaming Models](#-proactive-streaming-models)
+    - [Token-Driven Triggering via EOS / Action Token](#token-driven-triggering-via-eos--action-token)
+    - [Dedicated Classification Heads / Detectors](#dedicated-classification-heads--detectors)
+    - [Uncertainty \& Perplexity Validation](#uncertainty--perplexity-validation)
+    - [Visual Change / Event-based Trigger](#visual-change--event-based-trigger)
+  - [📺 Reactive Streaming Models](#-reactive-streaming-models)
+    - [KV Cache Management \& Eviction](#kv-cache-management--eviction)
+    - [Hierarchical Memory \& Summarization](#hierarchical-memory--summarization)
+    - [Retrieval-Augmented Mechanisms](#retrieval-augmented-mechanisms)
+    - [Computational Efficiency \& Sparse Computing](#computational-efficiency--sparse-computing)
+  - [📊 Benchmarks \& Datasets](#-benchmarks--datasets)
+    - [Multi-Turn Dialogue \& QA](#multi-turn-dialogue--qa)
+    - [Real-time Captioning \& Narration](#real-time-captioning--narration)
+    - [Proactive Response \& Timing Evaluation](#proactive-response--timing-evaluation)
+  - [🏆 Competitions](#-competitions)
+    - [Complete Model List by Release Date](#complete-model-list-by-release-date)
+    - [Complete Dataset List by Release Date](#complete-dataset-list-by-release-date)
+  - [🚀 Contributing](#-contributing)
+  - [❤️ Contact](#️-contact)
 
 ---
 
@@ -104,7 +110,7 @@ This list serves as a reference for researchers and practitioners exploring the 
 | [StreamVLN: Streaming Vision-and-Language Navigation via SlowFast Context Modeling](https://arxiv.org/abs/2507.05240)                    | StreamVLN          | 2025/07 | [Link](https://streamvln.github.io/)                 | arXiv        | **SlowFast Context (Pruning)**: Combines a **Sliding Window** (Fast Path) for recent dialogue with a **3D-Aware Token Pruning** (Slow Path) to compress historical visual states into a compact memory, enabling long-horizon navigation.           |
 | [InfiniPot-V: Memory-Constrained KV Cache Compression for Streaming Video Understanding](https://arxiv.org/abs/2506.15745)               | InfiniPot-V        | 2025/06 | [Link](https://github.com/aiha-lab/InfiniPot-V)      | NeurIPS 2025 | **Continual KV Compression**: Maintains a fixed memory budget by periodically compressing the KV cache using **Temporal-axis Redundancy (TaR)** (evicting repetitive frames) and **Value-Norm (VaN)** (keeping semantically important tokens).      |
 | [SVBench: A Benchmark with Temporal Multi-Turn Dialogues for Streaming Video Understanding](https://arxiv.org/abs/2502.10810)            | StreamingChat      | 2025/02 | [Link](https://sotayang.github.io/SVBench/)          | ICLR 2025    | **Segment-Based KV Cache Bypass**: Introduces a **training and inference paradigm** that splits long videos into sequential segments and conducts multi-turn dialogues per segment, avoiding unbounded KV cache growth.                             |
-
+| [Accelerating Streaming Video Large Language Models via Hierarchical Token Compression](https://arxiv.org/abs/2512.00891)            | STC      | 2026/02 | [Link](https://arxiv.org/abs/2512.00891)          | CVPR 2026    | **Hierarchical Token Compression**: Introduces STC, a **plug-and-play** streaming acceleration framework with two complementary modules: STC-Cacher caches and reuses features from temporally similar frames to reduce redundant ViT encoding, while STC-Pruner prunes low-saliency visual tokens before LLM prefill based on spatiotemporal relevance. The method works causally without future frames or user queries, retaining up to 99% accuracy while reducing ViT encoding and LLM pre-filling latency by 24.5% and 45.3%.
 
 ### Hierarchical Memory & Summarization
 *Methods that compress history into events, super-tokens, or hierarchical structures.*
